@@ -18,7 +18,7 @@ class LoginView extends StatelessWidget {
             child: Column(
               children: [
                 //Logo
-                SvgPicture.asset('assets/images/MyMarca.svg',
+                SvgPicture.asset('assets/images/logo.svg',
                   colorFilter:  ColorFilter.mode(
                       Theme.of(context).colorScheme.primary, BlendMode.srcIn
                   ),
