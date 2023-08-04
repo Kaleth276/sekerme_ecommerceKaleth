@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/views/login/widgets/login_divider.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/views/register/register_view.dart';
 import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/form_text_field.dart';
 import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/my_button_form.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/my_social_button.dart';
 
 class LoginView extends StatelessWidget {
 
@@ -25,6 +29,8 @@ class LoginView extends StatelessWidget {
                   colorFilter:  ColorFilter.mode(
                       Theme.of(context).colorScheme.primary, BlendMode.srcIn
                   ),
+                  alignment: Alignment.topCenter,
+                  width: 180,
                 ),
                 Text('login',
                 style: TextStyle(
@@ -78,8 +84,63 @@ class LoginView extends StatelessWidget {
                 const SizedBox(height: 20,),
 
                 MyButtonForm(
-                    text: 'login',
-                    onTab: (){}
+                  text: 'login',
+                  onTab: (){},
+
+                ),
+                const SizedBox(height: 20,),
+
+                const LoginDivider(),
+                const SizedBox(height: 20,),
+
+                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MySocialButton(
+                        OnTap: (){},
+                        imagePath: 'assets/icons/facebook.png'
+                    ),
+                    const SizedBox(width: 20,),
+                    MySocialButton(
+                        OnTap: (){},
+                        imagePath: 'assets/icons/twitter.png'
+                    ),
+                    const SizedBox(width: 20,),
+                    MySocialButton(
+                        OnTap: (){},
+                        imagePath: 'assets/icons/google.png'
+                    ),
+
+                  ],
+
+                ),
+                const SizedBox(height: 20,),
+
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 1.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Don\'t have an account',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        ),
+                        TextButton(onPressed: (){
+                          Navigator.push(
+                              context, MaterialPageRoute(
+                              builder: (context)=> const RegisterView()
+                          ),
+                          );
+                        },
+                            child:  Text('Sing Up',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                            ),
+                        ),
+                      ],
+                    ),
                 ),
 
 

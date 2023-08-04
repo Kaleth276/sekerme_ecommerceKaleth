@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 class MyButtonForm extends StatelessWidget {
 
   final String text;
-  final VoidCallback onPressed;
+  //final VoidCallback onPressed;
   final Function()? onTab;
 
   const MyButtonForm({
   super.key,
   required this.text,
-  required this.onPressed,
+  //required this.onPressed,
   this.onTab});
 
   @override
