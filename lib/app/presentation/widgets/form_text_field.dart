@@ -6,6 +6,7 @@ class FormTextField extends StatelessWidget {
   final TextInputType textInputType;
   final bool obscureText;
   final bool suffixIcon;
+  final TextEditingController controller;
 
   const FormTextField({
     super.key,
@@ -13,7 +14,8 @@ class FormTextField extends StatelessWidget {
     required this.hintText,
     required this.textInputType,
     required this.obscureText,
-    required this.suffixIcon
+    required this.suffixIcon, required this.controller
+
   });
 
   @override
@@ -33,6 +35,7 @@ class FormTextField extends StatelessWidget {
 
         ),
         child: TextField(
+          controller: controller,
           obscureText: obscureText,
           keyboardType: textInputType,
           decoration: InputDecoration(

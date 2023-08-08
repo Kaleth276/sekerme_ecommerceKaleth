@@ -2,10 +2,13 @@
 //Se debe importar el archivo de la vista que se desea mostrar
 //Se debe agregar la ruta en el Map de rutas
 
+
+
 import 'package:go_router/go_router.dart';
 
 //Archivo que contiene los links de las vistas
 import 'package:sekerme_ecommerceKaleth/app/presentation/views/views_links.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 
 final appRouter = GoRouter(
@@ -14,7 +17,18 @@ final appRouter = GoRouter(
   // rutas de la aplicación
   routes: [
     GoRoute(
-      path: '/',
+        path: '/',
+          builder: (context, state){
+            if(Supabase.instance.client.auth.currentUser !=null){
+              return const HomeView();
+            }else{
+              return  LoginView();
+            }
+          },
+    ),
+
+    GoRoute(
+      path: '/home',
       name: HomeView.name,
       builder: (context, state) => const HomeView(),
     ),
@@ -26,7 +40,7 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/login',
       name: LoginView.name,
-      builder: (context, state) => const LoginView(),
+      builder: (context, state) =>  LoginView(),
     ),
 
   ],

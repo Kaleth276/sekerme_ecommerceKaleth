@@ -3,15 +3,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sekerme_ecommerceKaleth/app/presentation/views/login/widgets/login_divider.dart';
 import 'package:sekerme_ecommerceKaleth/app/presentation/views/register/register_view.dart';
-import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/form_text_field.dart';
-import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/my_button_form.dart';
-import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/my_social_button.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/links_common_widgets.dart';
+
+import '../../widgets/form_text_field.dart';
+
+
 
 class LoginView extends StatelessWidget {
 
   static const String name = 'login_view';
+  final _emailAddress = TextEditingController();
+  final _visiblePassword = TextEditingController();
 
-  const LoginView({super.key});
+   LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +44,24 @@ class LoginView extends StatelessWidget {
                 const SizedBox(height: 20,),
 
 
-                const FormTextField(
+                 FormTextField(
                   labelText: 'Email',
                   hintText: 'Ingrese correo',
                   textInputType: TextInputType.emailAddress,
                   obscureText: false,
                   suffixIcon: false,
+                  controller: _emailAddress,
 
                 ),
                 const SizedBox(height: 20,),
 
-                const FormTextField(
+                 FormTextField(
                   labelText: 'password',
                   hintText: 'Ingrese contraseña',
                   textInputType: TextInputType.visiblePassword,
                   obscureText: true,
                   suffixIcon: false,
+                  controller: _visiblePassword,
 
                 ),
                  Padding(
@@ -85,7 +91,10 @@ class LoginView extends StatelessWidget {
 
                 MyButtonForm(
                   text: 'login',
-                  onTab: (){},
+                  onTab: (){
+                    print('Email Adress: ${_emailAddress.text}');
+                    print('Password: ${_visiblePassword.text}');
+                  },
 
                 ),
                 const SizedBox(height: 20,),
