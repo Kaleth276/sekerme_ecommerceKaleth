@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 import 'package:sekerme_ecommerceKaleth/app/presentation/views/login/widgets/login_divider.dart';
 import 'package:sekerme_ecommerceKaleth/app/presentation/views/register/register_view.dart';
 import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/links_common_widgets.dart';
 
-import '../../widgets/form_text_field.dart';
 
 
 
 class LoginView extends StatelessWidget {
+
 
   static const String name = 'login_view';
   final _emailAddress = TextEditingController();
@@ -70,7 +70,12 @@ class LoginView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context)=>ForgotPasswordView(),
+                              ),
+                              );
+                            },
                             child: Text('¿olvido contraseña?',
                               style: TextStyle(
                                   color: Theme.of(context).colorScheme.primary
@@ -138,7 +143,7 @@ class LoginView extends StatelessWidget {
                         TextButton(onPressed: (){
                           Navigator.push(
                               context, MaterialPageRoute(
-                              builder: (context)=> const RegisterView()
+                              builder: (context)=>  RegisterView()
                           ),
                           );
                         },

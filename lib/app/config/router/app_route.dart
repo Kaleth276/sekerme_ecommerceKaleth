@@ -5,6 +5,7 @@
 
 
 import 'package:go_router/go_router.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 
 //Archivo que contiene los links de las vistas
 import 'package:sekerme_ecommerceKaleth/app/presentation/views/views_links.dart';
@@ -35,12 +36,17 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/register',
       name: RegisterView.name,
-      builder: (context, state) => const RegisterView(),
+      builder: (context, state) =>  RegisterView(),
     ),
     GoRoute(
       path: '/login',
       name: LoginView.name,
       builder: (context, state) =>  LoginView(),
+    ),
+    GoRoute(
+      path: '/password',
+      name: ForgotPasswordView.name,
+      builder: (context, state) =>  ForgotPasswordView(),
     ),
 
   ],
