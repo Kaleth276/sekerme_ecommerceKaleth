@@ -12,6 +12,8 @@ import '../../widgets/form_text_field.dart';
 class LoginView extends StatelessWidget {
 
   static const String name = 'login_view';
+  final _email = TextEditingController();
+  final _password = TextEditingController();
   final _emailAddress = TextEditingController();
   final _visiblePassword = TextEditingController();
 
