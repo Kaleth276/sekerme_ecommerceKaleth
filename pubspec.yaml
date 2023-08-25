@@ -1,4 +1,4 @@
-name: spadeunas
+name: sekerme_ecommerceKaleth
 description: E-commerce app for product sales.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -44,9 +44,13 @@ dependencies:
   # equatable Un paquete de utilidad para comparar objetos en Dart.
   equatable: ^2.0.5
   flutter_svg: ^2.0.7
-  #dontev un paquete que proporciona acceso a las variables de entorno de la plataforma
   flutter_dotenv: ^5.1.0
   supabase_flutter: ^1.10.11
+  bloc: ^8.1.2
+  intl: ^0.18.1
+  crypto: ^3.0.3
+
+  #supabase_flutter:
   #fire base core Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
   #firebase_core: ^2.15.0
   #clud firestore Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
