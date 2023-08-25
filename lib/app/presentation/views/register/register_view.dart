@@ -120,7 +120,7 @@ class _RegisterViewState extends State<RegisterView> {
                         if(_checkBox==false){
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: const Text('You must accept the terms and conditions'),
+                                content: const Text('Debes aceptar los terminos y condiciones'),
                                 backgroundColor: Theme.of(context).colorScheme.error,
                                 duration: const Duration(seconds: 2),
 
