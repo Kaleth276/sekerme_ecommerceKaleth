@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:spadeunas/app/presentation/widgets/form_text_field.dart';
-import 'package:spadeunas/app/presentation/widgets/my_buttom_form.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/my_buttom_form.dart';
 
 import '../../widgets/my_from_text_field.dart';
 
