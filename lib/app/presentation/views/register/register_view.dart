@@ -1,13 +1,157 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/views/register/widgets/my_check_box.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/views/register/widgets/my_date_picker.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/my_button_form.dart';
+import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/form_text_field.dart';
+import '../../../config/security/encript.dart';
 
-class RegisterView extends StatelessWidget {
+
+class RegisterView extends StatefulWidget {
 
   static const String name = 'register_view';
 
-  const RegisterView({super.key});
+
+  const RegisterView({
+    super.key
+  });
+
+  @override
+  State<RegisterView> createState() => _RegisterViewState();
+}
+
+class _RegisterViewState extends State<RegisterView> {
+  final _firstName        = TextEditingController();
+  final _lastName         = TextEditingController();
+  final _email            = TextEditingController();
+  final _password         = TextEditingController();
+  final _confirmPassword  = TextEditingController();
+  final _datePecker       = TextEditingController();
+
+  bool _checkBox         = false;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return  Scaffold(
+      body: SingleChildScrollView(
+          child: SafeArea(
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  //Logo
+                  SvgPicture.asset('assets/images/MyMarca.svg',
+                    colorFilter:  ColorFilter.mode(
+                        Theme.of(context).colorScheme.primary, BlendMode.srcIn
+                    ),
+                    alignment: Alignment.topCenter,
+                    height: 180,
+                  ),
+                  Text('Create Account',
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.w600
+                    ),
+                  ),
+                  const SizedBox(height: 16.0),
+                  FormTextField(
+                      labelText: 'Primer nombre',
+                      hintText: 'Primer nombre',
+                      textInputType: TextInputType.text,
+                      obscureText: false,
+                      suffixIcon: true,
+                      controller: _firstName
+                  ),
+                  const SizedBox(height: 16.0),
+                  FormTextField(
+                      labelText: 'Segundo nombre',
+                      hintText: 'Segundo nombre',
+                      textInputType: TextInputType.text,
+                      obscureText: false,
+                      suffixIcon: true,
+                      controller: _lastName
+                  ),
+                  const SizedBox(height: 16.0),
+                  FormTextField(
+                    labelText: 'Correo ',
+                    hintText: 'Correo',
+                    textInputType: TextInputType.emailAddress,
+                    obscureText: false,
+                    suffixIcon: true,
+                    controller: _email,
+                  ),
+                  const SizedBox(height: 16.0),
+                  FormTextField(
+                      labelText: 'Ingresa una contraseña',
+                      hintText: 'Contraseña',
+                      textInputType: TextInputType.visiblePassword,
+                      obscureText: true,
+                      suffixIcon: true,
+                      controller: _password
+                  ),
+                  const SizedBox(height: 16.0),
+                  FormTextField(
+                      labelText: 'Confirma tu contraseña',
+                      hintText: 'Contraseña',
+                      textInputType: TextInputType.visiblePassword,
+                      obscureText: true,
+                      suffixIcon: true,
+                      controller: _confirmPassword
+                  ),
+                  const SizedBox(height: 16.0),
+                  MyDatePicker(
+                    controller: _datePecker,
+                  ),
+                  const SizedBox(height: 16.0),
+                  MyCheckBox(
+                    value: _checkBox,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _checkBox = value!;
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 16.0),
+                  MyButtonForm(
+                      text: 'Sing in',
+                      onTab: (){
+                        if(_checkBox==false){
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: const Text('You must accept the terms and conditions'),
+                                backgroundColor: Theme.of(context).colorScheme.error,
+                                duration: const Duration(seconds: 2),
+
+                              )
+                          );
+                        }else{
+                          print(encript(_password.text));
+                          print(encript(_confirmPassword.text));
+                          if(_password.text==_confirmPassword.text){
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('You are registered'),
+                                  backgroundColor: Theme.of(context).colorScheme.primary,
+                                  duration: const Duration(seconds: 2),
+
+                                )
+                            );
+
+                          }
+
+
+
+
+                        }
+
+                      }),
+                ],
+              ),
+            ),
+          )
+      ),
+    );
   }
 }
