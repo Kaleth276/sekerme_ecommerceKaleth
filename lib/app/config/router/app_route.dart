@@ -5,7 +5,6 @@
 
 
 import 'package:go_router/go_router.dart';
-import 'package:sekerme_ecommerceKaleth/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 
 //Archivo que contiene los links de las vistas
 import 'package:sekerme_ecommerceKaleth/app/presentation/views/views_links.dart';

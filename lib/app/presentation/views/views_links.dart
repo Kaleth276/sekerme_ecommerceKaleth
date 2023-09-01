@@ -5,5 +5,6 @@
 export 'package:sekerme_ecommerceKaleth/app/presentation/views/home/home_view.dart';
 export 'package:sekerme_ecommerceKaleth/app/presentation/views/login/login_view.dart';
 export 'package:sekerme_ecommerceKaleth/app/presentation/views/register/register_view.dart';
+export 'package:sekerme_ecommerceKaleth/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 
 
