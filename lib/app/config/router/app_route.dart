@@ -21,8 +21,8 @@ final appRouter = GoRouter(
           builder: (context, state){
             if(Supabase.instance.client.auth.currentUser !=null){
               return const HomeView();
-            }else{
-              return  LoginView();
+            }else {
+              return LoginView();
             }
           },
     ),

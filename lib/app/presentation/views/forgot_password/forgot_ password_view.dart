@@ -6,7 +6,7 @@ import 'package:sekerme_ecommerceKaleth/app/presentation/widgets/my_button_form.
 
 class ForgotPasswordView extends StatelessWidget {
 
-    static const String name = 'register_view';
+    static const String name = 'forgot_password_view';
     final _emailAddress = TextEditingController();
    ForgotPasswordView({super.key});
 

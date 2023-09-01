@@ -4,7 +4,7 @@ import 'package:sekerme_ecommerceKaleth/app/config/router/app_route.dart';
 import 'package:sekerme_ecommerceKaleth/app/presentation/bloc/auth/auth_bloc.dart';
 
 import 'config/themes/theme.dart';
-import 'presentation/views/views_links.dart';
+
 
 
 class App extends StatelessWidget {
