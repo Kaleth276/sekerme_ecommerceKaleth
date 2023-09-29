@@ -21,7 +21,7 @@ class ForgotPasswordView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                SvgPicture.asset('assets/images/MyMarca.svg',
+                SvgPicture.asset('assets/images/LOGOUNAS.svg',
                 colorFilter: ColorFilter.mode(
                   Theme.of(context).colorScheme.primary,BlendMode.srcIn
                 ),

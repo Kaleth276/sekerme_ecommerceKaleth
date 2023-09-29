@@ -1,38 +1,38 @@
-class UsersModel{
-  final String nombre;
-  final String apellido;
-  final String contacto;
-  final String direccion;
-  final String email;
-  final String nombreUsuario;
-  final String contrasena;
+class CitasModel{
+  final String usuario;
+  final String fecha;
+  final String lugar;
+  final String hora;
+  final String servicio;
+  final String empleado;
 
-const UsersModel({
 
-  required this.nombre,
-  required this.apellido,
-  required this.contacto,
-  required this.direccion,
-  required this.email,
-  required this.nombreUsuario,
-  required this.contrasena
+const CitasModel({
+
+  required this.usuario,
+  required this.fecha,
+  required this.lugar,
+  required this.hora,
+  required this.servicio,
+  required this.empleado,
+
 });
-static UsersModel fromJson(Map<String,dynamic>json)=>UsersModel(
-  nombre: json['nombre'],
-  apellido: json['apellido'],
-  contacto: json['contacto'],
-  direccion: json['direccion'],
-  email: json['email'],
-  nombreUsuario: json['nombreUsuario'],
-  contrasena: json['contrasena']);
+static CitasModel fromJson(Map<String,dynamic>json)=>CitasModel(
+  usuario: json['usuario'],
+  fecha: json['fecha'],
+  lugar: json['lugar'],
+  hora: json['hora'],
+  servicio: json['servicio'],
+  empleado: json['empleado'],
+  );
 
 Map<String,dynamic>toJson()=><String,dynamic>{
-  'nombre':nombre,
-  'apellido':apellido,
-  'contacto':contacto,
-  'direccion':direccion,
-  'email':email,
-  'nombreUsuario':nombreUsuario,
-  'contrasena':contrasena
+  'usuario':usuario,
+  'fecha':fecha,
+  'lugar':lugar,
+  'hora':hora,
+  'servicio':servicio,
+  'empleado':empleado,
+
 };
 }
